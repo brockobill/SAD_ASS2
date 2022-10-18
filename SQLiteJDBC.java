@@ -53,14 +53,15 @@ public class SQLiteJDBC {
             stmt.executeUpdate("DROP TABLE IF EXISTS STUDENT"); //drops table
             stmt.executeUpdate("DROP TABLE IF EXISTS BADGES"); //drops table
             stmt.executeUpdate("DROP TABLE IF EXISTS ATTENDENCE"); //drops table
+            stmt.executeUpdate("DROP TABLE IF EXISTS TESTS"); //drops table
+            stmt.executeUpdate("DROP TABLE IF EXISTS TOPICS"); //drops table
+            stmt.executeUpdate("DROP TABLE IF EXISTS PARTS"); //drops table
 
             String student = "CREATE TABLE IF NOT EXISTS STUDENT "
                     + "(ID INT NOT NULL PRIMARY KEY, "
                     + " FirstName VARCHAR(20) NOT NULL, "
                     + " LastName VARCHAR(20) NOT NULL, "
-                    + " DOB DATE NOT NULL, "
-                    + " Attendance VARCHAR(10), "
-                    + " Badges VARCHAR(10))";
+                    + " DOB DATE NOT NULL)";
 
             String badges = "CREATE TABLE IF NOT EXISTS BADGES "
                     + "(ID INT NOT NULL PRIMARY KEY, "
@@ -73,9 +74,27 @@ public class SQLiteJDBC {
                     + " Date DATE, "
                     + " attended BOOLEAN)";
 
+            String tests = "CREATE TABLE IF NOT EXISTS TESTS"
+                    + " (ID INT NOT NULL PRIMARY KEY, "
+                    + " BadgeID INT, "
+                    + " Completed BOOLEAN)";
+
+            String topics = "CREATE TABLE IF NOT EXISTS TOPICS"
+                    + " (ID INT NOT NULL PRIMARY KEY, "
+                    + " TestID INT, "
+                    + " Completed BOOLEAN)";
+
+            String parts = "CREATE TABLE IF NOT EXISTS PARTS"
+                    + " (ID INT NOT NULL PRIMARY KEY, "
+                    + " TopicID INT, "
+                    + " Completed BOOLEAN)";
+
             stmt.executeUpdate(student);
             stmt.executeUpdate(badges);
             stmt.executeUpdate(attendence);
+            stmt.executeUpdate(tests);
+            stmt.executeUpdate(topics);
+            stmt.executeUpdate(parts);
             stmt.close();
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -94,10 +113,12 @@ public class SQLiteJDBC {
             c.setAutoCommit(false);
 
             stmt = c.createStatement();
+            
+            
 
-            String student1 = "INSERT INTO STUDENT (ID, FirstName, LastName, "
-                    + "DOB, Attendance, Badges) "
-                    + "VALUES (1, 'Brock', 'Mathison', '27/11/1971', NULL, NULL);";
+            String student1 = "INSERT INTO AUTO_INCREMENT STUDENT (ID, FirstName, LastName, "
+                    + "DOB) "
+                    + "VALUES (1, 'Brock', 'Mathison', '27/11/1971');";
             stmt.executeUpdate(student1);
 
             String student1_1 = "INSERT INTO badges (ID, Level, Types, "
@@ -106,8 +127,8 @@ public class SQLiteJDBC {
             stmt.executeUpdate(student1_1);
 
             String student2 = "INSERT INTO STUDENT (ID, FirstName, LastName, "
-                    + "DOB, Attendance, Badges) "
-                    + "VALUES (2, 'Caden', 'Wilson', '01/02/2002', NULL, NULL);";
+                    + "DOB) "
+                    + "VALUES (2, 'Caden', 'Wilson', '01/02/2002');";
             stmt.executeUpdate(student2);
 
             String student2_1 = "INSERT INTO badges (ID, Level, Types, "
@@ -116,8 +137,8 @@ public class SQLiteJDBC {
             stmt.executeUpdate(student2_1);
 
             String student3 = "INSERT INTO STUDENT (ID, FirstName, LastName, "
-                    + "DOB, Attendance, Badges) "
-                    + "VALUES (3, 'ChitiPat', 'Marsri', '11/05/2003', NULL, NULL);";
+                    + "DOB) "
+                    + "VALUES (3, 'ChitiPat', 'Marsri', '11/05/2003');";
             stmt.executeUpdate(student3);
 
             String student3_1 = "INSERT INTO badges (ID, Level, Types, "
@@ -126,8 +147,8 @@ public class SQLiteJDBC {
             stmt.executeUpdate(student3_1);
 
             String student4 = "INSERT INTO STUDENT (ID, FirstName, LastName, "
-                    + "DOB, Attendance, Badges) "
-                    + "VALUES (4, 'Steven', 'Meng', '21/05/2001', NULL, NULL);";
+                    + "DOB) "
+                    + "VALUES (4, 'Steven', 'Meng', '21/05/2001');";
             stmt.executeUpdate(student4);
 
             String student4_1 = "INSERT INTO badges (ID, Level, Types, "
