@@ -3,7 +3,7 @@
 Steps to Initialize ASS2.DB:
 WINDOWS INSTRUCTIONS
 1. Download ASS2.db & SQLiteJDBC.java use the GREEN CODE button on the SAD_ASS2 main page
-2. Download the sqlite 3 folder
+2. An sqlite3 folder will be included in this dowload
 3. Create folder sqlite in C:\ drive of your PC
 4. Import contents of sqlite folder into C:\sqlite
 5. In NetBeans IDE - create project called ASS2 (must be Java Ant project)
