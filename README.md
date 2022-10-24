@@ -7,7 +7,7 @@ WINDOWS INSTRUCTIONS
 3. Create folder sqlite in C:\ drive of your PC
 4. Import contents of sqlite folder into C:\sqlite
 5. In NetBeans IDE - create project called ASS2 (must be Java Ant project)
-6. Drag and Drop the dowloaded SQLiteJDBC_final.java into the Source Packages Folder for the project
+6. Drag and Drop the dowloaded SQLiteJDBC.java into the Source Packages Folder for the project
 7. Right-click Libraries folder under the ASS2 Project
 8. Click ADD JAR/Folder
 9. Go to C:\sqlite and select sqlite-jdbc-3.39.3.0
