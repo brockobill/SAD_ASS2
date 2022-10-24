@@ -2,7 +2,7 @@
 16OCT2022: Brock created README file.
 Steps to Initialize ASS2.DB:
 WINDOWS INSTRUCTIONS
-1. Download ASS2_final.db & SQLiteJDBC_final.java
+1. Download ASS2.db & SQLiteJDBC.java
 2. Download the sqlite 3 folder
 3. Create folder sqlite in C:\ drive of your PC
 4. Import contents of sqlite folder into C:\sqlite
